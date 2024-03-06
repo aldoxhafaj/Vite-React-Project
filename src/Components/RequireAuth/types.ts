@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
+import { Role } from "src/Types/backend";
 
 export type PrivateRouteProps = {
-  element: ReactNode;
-  roles: string[];
+	children: ReactNode;
+	roles: Role[];
 };

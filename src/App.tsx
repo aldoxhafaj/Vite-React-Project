@@ -1,32 +1,34 @@
 import { Route, Routes } from "react-router-dom";
-import PrivateRoute from "@components/RequireAuth/PrivateRoute";
 import { AdminRoutes } from "@routes/AdminRoutes";
 import { UserRoutes } from "@routes/UserRoutes";
+import { Role } from "./Types/backend";
+import PrivateRoute from "@components/RequireAuth/PrivateRoute";
+import { NotFoundPage } from "@containers/NotFound";
+import { Login } from "@containers/Login";
 
-//TODO adminRoutes and UserRoutes NotFound
 const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route
-        path="/admin/*"
-        element={<PrivateRoute roles={["admin"]} element={<AdminRoutes />} />}
-      />
-      <Route
-        path="/user/*"
-        element={<PrivateRoute roles={["user"]} element={<UserRoutes />} />}
-      />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
-  );
-};
-
-export const Login = () => {
-  return <div>Login</div>;
-};
-
-export const NotFoundPage = () => {
-  return <div>NotFound</div>;
+	return (
+		<Routes>
+			<Route path="/" element={<Login />} />
+			<Route
+				path="/admin/*"
+				element={
+					<PrivateRoute roles={[Role.ADMIN]}>
+						<AdminRoutes />
+					</PrivateRoute>
+				}
+			/>
+			<Route
+				path="/user/*"
+				element={
+					<PrivateRoute roles={[Role.USER, Role.ADMIN]}>
+						<UserRoutes />
+					</PrivateRoute>
+				}
+			/>
+			<Route path="*" element={<NotFoundPage />} />
+		</Routes>
+	);
 };
 
 export default App;

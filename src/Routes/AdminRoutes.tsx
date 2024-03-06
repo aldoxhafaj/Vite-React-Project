@@ -1,9 +1,12 @@
-import { Route } from "react-router-dom";
+import { NotFoundPage } from "@containers/NotFound";
+import { AdminDashboard } from "@containers/admin/Dashboard";
+import { Route, Routes } from "react-router-dom";
 
 export const AdminRoutes = () => {
-  return <Route path="/admin/dashboard" element={<AdminDashboard />} />;
-};
-
-export const AdminDashboard = () => {
-  return <div>AdminDashboard</div>;
+	return (
+		<Routes>
+			<Route path="/dashboard" element={<AdminDashboard />} />
+			<Route path="*" element={<NotFoundPage />} />
+		</Routes>
+	);
 };

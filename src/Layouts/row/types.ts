@@ -1,6 +1,6 @@
 import { HorizontalSpacing, VerticalSpacing } from "@themes/spacing";
-import { FlexStyle } from "../../Types";
 import { ReactNode } from "react";
+import { FlexStyle } from "src/Types";
 
 export type RowProps = {
 	children: ReactNode;

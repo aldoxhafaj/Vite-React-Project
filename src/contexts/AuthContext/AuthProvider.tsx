@@ -1,25 +1,28 @@
 import { createContext, useState } from "react";
 import { AuthContextProps, AuthProviderProps } from "./types";
-import { User } from "../../Types/backend";
+import { Role, User } from "src/Types/backend";
 
 export const AuthContext = createContext<AuthContextProps | null>(null);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [loggedUser, setLoggedUser] = useState<User | null>(null);
+	const [loggedUser, setLoggedUser] = useState<User | null>({
+		id: "1",
+		role: Role.ADMIN,
+	});
 
-  const initializeUser = (userData: User) => {
-    setLoggedUser(userData);
-  };
+	const initializeUser = (userData: User) => {
+		setLoggedUser(userData);
+	};
 
-  const getUserRole = () => {
-    return loggedUser ? loggedUser.role : null;
-  };
+	const getUserRole = () => {
+		return loggedUser ? loggedUser.role : null;
+	};
 
-  const userRole = getUserRole();
+	const userRole = getUserRole();
 
-  return (
-    <AuthContext.Provider value={{ initializeUser, getUserRole, userRole }}>
-      {children}
-    </AuthContext.Provider>
-  );
+	return (
+		<AuthContext.Provider value={{ initializeUser, getUserRole, userRole }}>
+			{children}
+		</AuthContext.Provider>
+	);
 };

@@ -27,8 +27,11 @@
 			"@helpers/*": ["src/helpers/*"],
 			"@containers/*": ["src/Containers/*"],
 			"@layouts/*": ["src/Layouts/*"],
-			"@types/*": ["src/Types/*"]
-		}
+			"@routes/*": ["src/Routes/*"],
+			"@contexts/*": ["src/contexts"],
+			"*": ["*", "src/Types/*"]
+		},
+		"typeRoots": ["./types", "./node_modules/@types"]
 	},
 	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }]

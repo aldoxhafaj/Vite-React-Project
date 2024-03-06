@@ -4,6 +4,7 @@ import { HorizontalSpacing, VerticalSpacing } from "@themes/spacing";
 import { ReactNode } from "react";
 
 export type ContainerProps = {
+	className?: string;
 	padding?: HorizontalSpacing;
 	paddingBottom?: VerticalSpacing;
 	paddingLeft?: HorizontalSpacing;
@@ -19,4 +20,5 @@ export type ContainerProps = {
 	borderWidth?: number;
 	backgroundColor?: Color | string;
 	flex?: number;
+	flexGrow?: number;
 };

@@ -1,6 +1,7 @@
 import { ContainerProps } from "./types";
 
 export const Container = ({
+	className,
 	padding,
 	paddingBottom,
 	paddingLeft,
@@ -15,25 +16,28 @@ export const Container = ({
 	borderWidth,
 	backgroundColor,
 	flex,
+	flexGrow,
 	children,
 }: ContainerProps) => {
 	return (
 		<div
+			className={className}
 			style={{
-				padding,
 				paddingBottom,
 				paddingLeft,
 				paddingRight,
 				paddingTop,
-				borderRadius,
+				padding,
 				borderTopLeftRadius,
 				borderTopRightRadius,
 				borderBottomRightRadius,
 				borderBottomLeftRadius,
+				borderRadius,
 				borderColor,
 				borderWidth,
 				backgroundColor,
 				flex,
+				flexGrow,
 			}}
 		>
 			{children}

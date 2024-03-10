@@ -1,61 +1,48 @@
 import { Input } from "@components/Input";
-import { Container } from "@layouts/container";
-import { Tab, Tabs } from "@nextui-org/react";
+import { LoginForm } from "@components/LoginForm/LoginForm";
+import { useState } from "react";
+
+type InputValue = React.ChangeEvent<HTMLInputElement> | string;
 
 export const useLogin = () => {
-  const LoginForm = () => {
-    return (
-      <Container
-        flexGrow={1}
-        className="h-full flex flex-col items-center justify-between"
-      >
-        <div className="flex w-full flex-col gap-3">
-          <Input
-            type={"email"}
-            label={"Email"}
-            variant={"bordered"}
-            isRequired
-          />
-          <Input
-            type={"password"}
-            label={"Password"}
-            variant={"bordered"}
-            isRequired
-          />
-        </div>
-        <Container>
-          <button>Login</button>
-        </Container>
-      </Container>
-    );
+  const [email, setEmail] = useState<InputValue>("");
+  const [password, setPassword] = useState<InputValue>("");
+
+  const onSelectionChange = () => {
+    setEmail("");
+    setPassword("");
   };
+
+  const isDisabled = !email || !password;
 
   const tabs = [
     {
       id: "signIn",
       label: "Sign in",
-      content: <LoginForm />,
+      content: (
+        <LoginForm
+          onEmailChange={(value) => setEmail(value)}
+          onPasswordChange={(value) => setPassword(value)}
+          isDisabled={isDisabled}
+        />
+      ),
     },
     {
       id: "signUp",
       label: "Sign up",
-      content: <Input type={"email"} label={"Email"} isRequired />,
+      content: (
+        <Input
+          type={"email"}
+          label={"Email"}
+          isRequired
+          onChange={(value) => setEmail(value)}
+        />
+      ),
     },
   ];
 
-  const AuthenticationTabs = () => {
-    return (
-      <div className="flex flex-grow w-full flex-col items-center">
-        <Tabs aria-label="Dynamic tabs" items={tabs} fullWidth>
-          {(item) => (
-            <Tab key={item.id} title={item.label} className="w-full flex-grow">
-              {item.content}
-            </Tab>
-          )}
-        </Tabs>
-      </div>
-    );
+  return {
+    tabs,
+    onSelectionChange,
   };
-
-  return { AuthenticationTabs };
 };

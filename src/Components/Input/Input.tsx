@@ -1,11 +1,13 @@
 import { Input as InputComponent } from "@nextui-org/react";
-import { InputProps } from "./types";
+import { InputComponentProps } from "./types";
 
 export const Input = ({
   size = "sm",
   type,
   label,
   variant = "flat",
+  value,
+  defaultValue = "",
   startContent,
   endContent,
   errorMessage,
@@ -13,12 +15,15 @@ export const Input = ({
   isDisabled = false,
   isReadOnly = false,
   isRequired = false,
-}: InputProps) => {
+  onChange,
+}: InputComponentProps) => {
   return (
     <InputComponent
       size={size}
       type={type}
       label={label}
+      value={value}
+      defaultValue={defaultValue}
       variant={variant}
       startContent={startContent}
       endContent={endContent}
@@ -27,10 +32,7 @@ export const Input = ({
       isDisabled={isDisabled}
       isReadOnly={isReadOnly}
       isRequired={isRequired}
-      //onValueChange={(value:string) => onChange(value)}
-      //   startContent={
-      //     <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-      //   }
+      onChange={(event) => onChange(event.target.value)}
       fullWidth
     />
   );

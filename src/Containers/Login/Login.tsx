@@ -7,9 +7,11 @@ import { HorizontalSpacing } from "@themes/spacing";
 import { verticalScale } from "@utils/calculations";
 import { useLogin } from "./useLogin";
 import { Shadow } from "@themes/shadow";
+import { Tab, Tabs } from "@nextui-org/react";
 
 export const Login = () => {
-  const { AuthenticationTabs } = useLogin();
+  const { tabs, onSelectionChange } = useLogin();
+
   return (
     <BackgroundImage name="nature" imageHeight={ImageSize?.full}>
       <Container
@@ -23,15 +25,35 @@ export const Login = () => {
           borderRadius={BorderRadius.S_M}
           boxShadow={Shadow.SHADOW4}
         >
-          <div className="w-full h-full flex flex-col items-center justify-start">
-            <div className="flex flex-col items-center gap-1">
+          <Container className="w-full h-full flex flex-col items-center justify-start">
+            <Container className="flex flex-col items-center gap-1">
               <p className="font-cabin font-bold">Welcome Back</p>
               <p className="text-thin text-gray-500 font-cabin">
                 Welcome back!Please enter your details!
               </p>
-            </div>
-            <AuthenticationTabs />
-          </div>
+            </Container>
+            <Container
+              className="flex w-full flex-col items-center"
+              flexGrow={1}
+            >
+              <Tabs
+                aria-label="Dynamic tabs"
+                items={tabs}
+                onSelectionChange={onSelectionChange}
+                fullWidth
+              >
+                {(item) => (
+                  <Tab
+                    key={item.id}
+                    title={item.label}
+                    className="w-full flex-grow"
+                  >
+                    {item.content}
+                  </Tab>
+                )}
+              </Tabs>
+            </Container>
+          </Container>
         </Container>
       </Container>
     </BackgroundImage>

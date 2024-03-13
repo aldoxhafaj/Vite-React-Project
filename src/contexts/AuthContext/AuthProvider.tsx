@@ -19,9 +19,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 	};
 
 	const userRole = getUserRole();
+	const isAdmin = userRole === Role.ADMIN;
 
 	return (
-		<AuthContext.Provider value={{ initializeUser, getUserRole, userRole }}>
+		<AuthContext.Provider
+			value={{ initializeUser, getUserRole, userRole, isAdmin }}
+		>
 			{children}
 		</AuthContext.Provider>
 	);

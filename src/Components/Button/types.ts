@@ -4,7 +4,7 @@ import { FontSize } from "@themes/fontSize";
 import { VerticalSpacing } from "@themes/spacing";
 
 export type ButtonComponentProps = ButtonProps & {
-	height?: VerticalSpacing;
-	backgroundColor?: Color;
-	fontSize?: FontSize;
+  height?: VerticalSpacing;
+  backgroundColor?: Color;
+  fontSize?: FontSize;
 };

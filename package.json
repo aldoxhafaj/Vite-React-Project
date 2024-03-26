@@ -7,6 +7,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix",
     "preview": "vite preview",
     "typescript:check": "tsc",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
@@ -43,10 +44,17 @@
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
     "eslint": "^8.56.0",
+    "eslint-plugin-functional": "^6.3.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-sonarjs": "^0.24.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-unused-imports": "^3.1.0",
     "html-minifier-terser": "^7.2.0",
+    "husky": "^9.0.11",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "storybook": "^8.1.0-alpha.3",
@@ -55,5 +63,10 @@
     "vite": "^5.1.4",
     "vite-plugin-html": "^3.2.2",
     "vite-tsconfig-paths": "^4.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }

@@ -1,6 +1,7 @@
-import { useMemo } from "react";
-import { ImageComponentProps } from "./types";
-import { getImage } from "@themes/images";
+import { getImage } from '@themes/images';
+import { useMemo } from 'react';
+
+import { ImageComponentProps } from './types';
 
 export const ImageComponent = ({
   name,
@@ -16,7 +17,7 @@ export const ImageComponent = ({
       style={{
         height: imageHeight,
         width: imageWidth,
-        objectFit: resizeMode ?? "cover",
+        objectFit: resizeMode ?? 'cover',
       }}
     />
   );

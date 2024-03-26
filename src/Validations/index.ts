@@ -1,1 +1,1 @@
-export { useYup } from "./useYup";
+export { useYup } from './useYup';

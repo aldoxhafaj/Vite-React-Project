@@ -1,10 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import { AdminRoutes } from "@routes/AdminRoutes";
-import { UserRoutes } from "@routes/UserRoutes";
-import { Role } from "./Types/backend";
-import PrivateRoute from "@components/RequireAuth/PrivateRoute";
-import { NotFoundPage } from "@containers/NotFound";
-import { Login } from "@containers/Login";
+import { PrivateRoute } from '@components/RequireAuth/PrivateRoute';
+import { Login } from '@containers/Login';
+import { NotFoundPage } from '@containers/NotFound';
+import { AdminRoutes } from '@routes/AdminRoutes';
+import { UserRoutes } from '@routes/UserRoutes';
+import { Route, Routes } from 'react-router-dom';
+
+import { Role } from './Types/backend';
 
 const App = () => {
   return (

@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Role } from "src/Types/backend";
+import { ReactNode } from 'react';
+import { Role } from 'src/Types/backend';
 
 export type PrivateRouteProps = {
   children: ReactNode;

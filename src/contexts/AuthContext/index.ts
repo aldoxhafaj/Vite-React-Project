@@ -1,1 +1,1 @@
-export { usePermissions } from "./usePermissions";
+export { usePermissions } from './usePermissions';

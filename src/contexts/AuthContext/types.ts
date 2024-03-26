@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Role, User } from "src/Types/backend";
+import { ReactNode } from 'react';
+import { Role, User } from 'src/Types/backend';
 
 export type AuthContextProps = {
   initializeUser: (user: User) => void;

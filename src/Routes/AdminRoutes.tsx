@@ -1,6 +1,6 @@
-import { NotFoundPage } from "@containers/NotFound";
-import { AdminDashboard } from "@containers/admin/Dashboard";
-import { Route, Routes } from "react-router-dom";
+import { AdminDashboard } from '@containers/admin/Dashboard';
+import { NotFoundPage } from '@containers/NotFound';
+import { Route, Routes } from 'react-router-dom';
 
 export const AdminRoutes = () => {
   return (

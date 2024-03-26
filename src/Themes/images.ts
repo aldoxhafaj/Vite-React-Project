@@ -1,5 +1,7 @@
-import gymImage from "../Shared/Images/gym.png";
-import natureImage from "../Shared/Images/nature.png";
+import { scale } from '@utils/calculations';
+
+import gymImage from '../Shared/Images/gym.png';
+import natureImage from '../Shared/Images/nature.png';
 
 const Images = {
   gym: gymImage,
@@ -9,8 +11,6 @@ const Images = {
 export type ImageName = keyof typeof Images;
 
 export const getImage = (imageName: ImageName) => Images[imageName];
-
-import { scale } from "@utils/calculations";
 
 enum ImageSizeEnum {
   /**
@@ -48,7 +48,7 @@ enum ImageSizeEnum {
   XL6 = 300,
   XL7 = 350,
   XL8 = 400,
-  full = "100dvh",
+  full = '100dvh',
 }
 
 export enum ImageSize {

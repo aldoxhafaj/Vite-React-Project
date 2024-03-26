@@ -1,1 +1,1 @@
-export * from "./flexStyle";
+export * from './flexStyle';

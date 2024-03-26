@@ -55,6 +55,7 @@
     "eslint-plugin-unused-imports": "^3.1.0",
     "html-minifier-terser": "^7.2.0",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "storybook": "^8.1.0-alpha.3",
@@ -63,6 +64,12 @@
     "vite": "^5.1.4",
     "vite-plugin-html": "^3.2.2",
     "vite-tsconfig-paths": "^4.3.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "npm run lint --cache",
+      "npm run prettier:fix --cache"
+    ]
   },
   "husky": {
     "hooks": {

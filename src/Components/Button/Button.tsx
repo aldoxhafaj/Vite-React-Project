@@ -45,6 +45,7 @@ export const Button = ({
         fontSize,
         maxHeight: BUTTON_MAX_HEIGHT,
         minHeight: BUTTON_MIN_HEIGHT,
+        padding: 10,
       }}
       onPress={onPress}
     >

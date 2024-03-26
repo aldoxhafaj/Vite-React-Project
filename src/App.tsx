@@ -1,4 +1,4 @@
-import PrivateRoute from '@components/RequireAuth/PrivateRoute';
+import { PrivateRoute } from '@components/RequireAuth/PrivateRoute';
 import { Login } from '@containers/Login';
 import { NotFoundPage } from '@containers/NotFound';
 import { AdminRoutes } from '@routes/AdminRoutes';

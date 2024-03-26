@@ -10,7 +10,7 @@ import { useLoginSchema } from "@validations/useLoginSchema";
 export const useLogin = () => {
 	const { isAdmin } = usePermissions();
 	const navigate = useNavigate();
-	const [selectedTab, setSelectedTab] = useState<Key>("signIn");
+	const [selectedTab, setSelectedTab] = useState<Key>(Tab.SIGN_IN);
 	const loginSchema = useLoginSchema();
 
 	const onTabChange = (key: Key) => {
@@ -23,12 +23,6 @@ export const useLogin = () => {
 			return;
 		}
 		navigate("/user/dashboard");
-	};
-
-	const navigateOnKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
-		if (event.code === "Enter") {
-			navigateToDashboard();
-		}
 	};
 
 	const formik = useFormik<FormikProps>({
@@ -52,17 +46,17 @@ export const useLogin = () => {
 
 	const tabs = [
 		{
-			id: "signIn",
-			label: "Sign in",
+			id: Tab.SIGN_IN,
+			label: Tab.SIGN_IN,
 			content: (
-				<LoginForm formik={formik} onKeyDown={navigateOnKeyDown} />
+				<LoginForm formik={formik} onKeyDown={navigateToDashboard} />
 			),
 		},
 		{
-			id: "signUp",
-			label: "Sign up",
+			id: Tab.SIGN_UP,
+			label: Tab.SIGN_UP,
 			content: (
-				<RegisterForm formik={formik} onKeyDown={navigateOnKeyDown} />
+				<RegisterForm formik={formik} onKeyDown={navigateToDashboard} />
 			),
 		},
 	];

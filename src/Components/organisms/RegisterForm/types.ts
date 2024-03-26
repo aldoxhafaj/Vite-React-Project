@@ -3,5 +3,9 @@ import { FormikContextType } from "formik";
 
 export type RegisterFormProps = {
 	formik: FormikContextType<FormikProps>;
-	onKeyDown?: (event: React.KeyboardEvent<HTMLFormElement>) => void;
+	onKeyDown?: () => void;
 };
+
+export enum EventCode {
+	ENTER = "Enter",
+}

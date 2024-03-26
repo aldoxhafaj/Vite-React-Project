@@ -1,5 +1,6 @@
-import { FooterProps } from "./types";
-import { VerticalSpacing } from "@themes/spacing";
+import { VerticalSpacing } from '@themes/spacing';
+
+import { FooterProps } from './types';
 
 export const Footer = ({
   children,
@@ -11,12 +12,12 @@ export const Footer = ({
     <div
       style={{
         paddingTop: VerticalSpacing.M,
-        flexDirection: "column",
-        alignSelf: "stretch",
-        justifyContent: "flex-end",
+        flexDirection: 'column',
+        alignSelf: 'stretch',
+        justifyContent: 'flex-end',
         flexGrow,
         paddingBottom,
-        alignItems: alignItems ? alignItems : "center",
+        alignItems: alignItems ? alignItems : 'center',
       }}
     >
       {children}

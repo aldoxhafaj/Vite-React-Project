@@ -1,4 +1,4 @@
-import { horizontalScale, verticalScale } from "@utils/calculations";
+import { horizontalScale, verticalScale } from '@utils/calculations';
 
 enum Spacing {
   /**

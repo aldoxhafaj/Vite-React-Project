@@ -1,6 +1,6 @@
-import { NotFoundPage } from "@containers/NotFound";
-import { UserDashboard } from "@containers/client/Dashboard";
-import { Route, Routes } from "react-router-dom";
+import { UserDashboard } from '@containers/client/Dashboard';
+import { NotFoundPage } from '@containers/NotFound';
+import { Route, Routes } from 'react-router-dom';
 
 export const UserRoutes = () => {
   return (

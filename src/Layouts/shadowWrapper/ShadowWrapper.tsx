@@ -1,5 +1,6 @@
-import { Shadow } from "@themes/shadow";
-import { ShadowWrapperType, ShadowWrapperProps } from "./types";
+import { Shadow } from '@themes/shadow';
+
+import { ShadowWrapperProps, ShadowWrapperType } from './types';
 
 const getShadowWrapper = (type: ShadowWrapperType) => {
   switch (type) {

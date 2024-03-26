@@ -1,12 +1,13 @@
-import { createContext, useState } from "react";
-import { AuthContextProps, AuthProviderProps } from "./types";
-import { Role, User } from "src/Types/backend";
+import { createContext, useState } from 'react';
+import { Role, User } from 'src/Types/backend';
+
+import { AuthContextProps, AuthProviderProps } from './types';
 
 export const AuthContext = createContext<AuthContextProps | null>(null);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loggedUser, setLoggedUser] = useState<User | null>({
-    id: "1",
+    id: '1',
     role: Role.ADMIN,
   });
 

@@ -1,4 +1,4 @@
-import { RowProps } from "./types";
+import { RowProps } from './types';
 
 export const Row = ({
   children,
@@ -11,9 +11,9 @@ export const Row = ({
   return (
     <div
       style={{
-        flexDirection: "row",
-        justifyContent: justifyContent ? justifyContent : "center",
-        alignItems: alignItems ? alignItems : "center",
+        flexDirection: 'row',
+        justifyContent: justifyContent ? justifyContent : 'center',
+        alignItems: alignItems ? alignItems : 'center',
         flex,
         marginTop,
         gap,

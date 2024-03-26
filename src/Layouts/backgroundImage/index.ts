@@ -1,2 +1,2 @@
-export { BackgroundImage } from "./BackgroundImage";
-export { ImageComponent } from "./ImageComponent";
+export { BackgroundImage } from './BackgroundImage';
+export { ImageComponent } from './ImageComponent';

@@ -1,11 +1,11 @@
-import { FormikProps } from "@containers/Login/types";
-import { FormikContextType } from "formik";
+import { FormikProps } from '@containers/Login/types';
+import { FormikContextType } from 'formik';
 
 export type LoginFormProps = {
-	formik: FormikContextType<FormikProps>;
-	onKeyDown?: () => void;
+  formik: FormikContextType<FormikProps>;
+  onKeyDown?: () => void;
 };
 
 export enum EventCode {
-	ENTER = "Enter",
+  ENTER = 'Enter',
 }

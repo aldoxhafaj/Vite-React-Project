@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-duplicate-enum-values */
 
-import { fontScale } from "@utils/calculations";
+import { fontScale } from '@utils/calculations';
 
 enum FontSizeEnum {
   /**

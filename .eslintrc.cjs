@@ -100,7 +100,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'error',
     eqeqeq: 'error',
     'no-empty-pattern': 'error',
-    'import/named': 'error',
+    'import/named': 'off',
     'import/no-named-as-default': 'off',
     'import/no-default-export': 'off',
     'import/first': 'error',

@@ -1,5 +1,6 @@
-import { FontSize } from "@themes/fontSize";
-import { TextProps } from "./types";
+import { FontSize } from '@themes/fontSize';
+
+import { TextProps } from './types';
 
 export const Text = ({
   children,

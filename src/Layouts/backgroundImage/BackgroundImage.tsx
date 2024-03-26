@@ -1,6 +1,7 @@
-import { useMemo } from "react";
-import { BackgroundImageProps } from "./types";
-import { getImage } from "@themes/images";
+import { getImage } from '@themes/images';
+import { useMemo } from 'react';
+
+import { BackgroundImageProps } from './types';
 
 export const BackgroundImage = ({
   name,
@@ -11,7 +12,7 @@ export const BackgroundImage = ({
 }: BackgroundImageProps) => {
   const memoizedImage = useMemo(() => getImage(name), [name]);
 
-  const width = imageWidth || "100%";
+  const width = imageWidth || '100%';
 
   return (
     <div className="relative" style={{ height: imageHeight, width }}>
@@ -21,7 +22,7 @@ export const BackgroundImage = ({
         style={{
           height: imageHeight,
           width,
-          objectFit: resizeMode ?? "cover",
+          objectFit: resizeMode ?? 'cover',
         }}
       />
       <div className="relative z-10">{children}</div>

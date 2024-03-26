@@ -1,4 +1,4 @@
-import { scale } from "@utils/calculations";
+import { scale } from '@utils/calculations';
 
 enum IconSizeEnum {
   /**

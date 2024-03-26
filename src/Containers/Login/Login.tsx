@@ -12,7 +12,7 @@ import { FontSize } from "@themes/fontSize";
 
 const TAB_MAX_HEIGHT = 35;
 export const Login = () => {
-	const { tabs, onSelectionChange } = useLogin();
+	const { tabs, onTabChange } = useLogin();
 
 	return (
 		<BackgroundImage name="nature" imageHeight={ImageSize?.full}>
@@ -50,7 +50,7 @@ export const Login = () => {
 							<Tabs
 								aria-label="Dynamic tabs"
 								items={tabs}
-								onSelectionChange={onSelectionChange}
+								onSelectionChange={onTabChange}
 								fullWidth
 							>
 								{(item) => (

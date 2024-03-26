@@ -4,6 +4,7 @@ import { InputComponentProps } from "./types";
 export const Input = ({
 	size = "sm",
 	type,
+	name,
 	label,
 	variant = "flat",
 	value,
@@ -18,6 +19,7 @@ export const Input = ({
 	isReadOnly = false,
 	isRequired = false,
 	onChange,
+	onBlur,
 }: InputComponentProps) => {
 	return (
 		<InputComponent
@@ -25,6 +27,7 @@ export const Input = ({
 			type={type}
 			label={label}
 			value={value}
+			name={name}
 			defaultValue={defaultValue}
 			placeholder={placeholder}
 			variant={variant}
@@ -36,7 +39,8 @@ export const Input = ({
 			isDisabled={isDisabled}
 			isReadOnly={isReadOnly}
 			isRequired={isRequired}
-			onChange={(event) => onChange(event.target.value)}
+			onChange={onChange}
+			onBlur={onBlur}
 			autoComplete="on"
 			fullWidth
 		/>

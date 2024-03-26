@@ -1,69 +1,74 @@
-import { Input } from "@components/Input";
-import { LoginForm } from "@components/LoginForm/LoginForm";
-import { useState } from "react";
+import { LoginForm } from "@components/organisms/LoginForm";
+import { RegisterForm } from "@components/organisms/RegisterForm";
+import { Key, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePermissions } from "src/contexts/AuthContext";
-
-type InputValue = React.ChangeEvent<HTMLInputElement> | string;
+import { FormikProps, Tab } from "./types";
+import { useFormik } from "formik";
+import { useLoginSchema } from "@validations/useLoginSchema";
 
 export const useLogin = () => {
-  const [email, setEmail] = useState<InputValue>("");
-  const [password, setPassword] = useState<InputValue>("");
-  const { isAdmin } = usePermissions();
-  const navigate = useNavigate();
+	const { isAdmin } = usePermissions();
+	const navigate = useNavigate();
+	const [selectedTab, setSelectedTab] = useState<Key>("signIn");
+	const loginSchema = useLoginSchema();
 
-  const isDisabled = !email || !password;
+	const onTabChange = (key: Key) => {
+		setSelectedTab(key);
+	};
 
-  const onSelectionChange = () => {
-    setEmail("");
-    setPassword("");
-  };
+	const navigateToDashboard = () => {
+		if (isAdmin) {
+			navigate("/admin/dashboard");
+			return;
+		}
+		navigate("/user/dashboard");
+	};
 
-  const navigateToDashboard = () => {
-    if (isAdmin) {
-      navigate("/admin/dashboard");
-      return;
-    }
-    navigate("/user/dashboard");
-  };
+	const navigateOnKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
+		if (event.code === "Enter") {
+			navigateToDashboard();
+		}
+	};
 
-  const navigateOnKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
-    if (isDisabled) return;
-    if (event.code === "Enter") {
-      navigateToDashboard();
-    }
-  };
+	const formik = useFormik<FormikProps>({
+		initialValues: {
+			email: "",
+			password: "",
+			bussinessName: "",
+			regEmail: "",
+			regPassword: "",
+			confirmPassword: "",
+		},
+		validationSchema: selectedTab === Tab.SIGN_IN ? loginSchema : undefined,
+		validateOnMount: true,
+		onSubmit: () => {
+			if (selectedTab === Tab.SIGN_IN) {
+				navigateToDashboard();
+			}
+			//TODO
+		},
+	});
 
-  const tabs = [
-    {
-      id: "signIn",
-      label: "Sign in",
-      content: (
-        <LoginForm
-          onEmailChange={(value) => setEmail(value)}
-          onPasswordChange={(value) => setPassword(value)}
-          isDisabled={isDisabled}
-          onClick={navigateToDashboard}
-          onKeyDown={navigateOnKeyDown}
-        />
-      ),
-    },
-    {
-      id: "signUp",
-      label: "Sign up",
-      content: (
-        <Input
-          type={"email"}
-          label={"Email"}
-          isRequired
-          onChange={(value) => setEmail(value)}
-        />
-      ),
-    },
-  ];
+	const tabs = [
+		{
+			id: "signIn",
+			label: "Sign in",
+			content: (
+				<LoginForm formik={formik} onKeyDown={navigateOnKeyDown} />
+			),
+		},
+		{
+			id: "signUp",
+			label: "Sign up",
+			content: (
+				<RegisterForm formik={formik} onKeyDown={navigateOnKeyDown} />
+			),
+		},
+	];
 
-  return {
-    tabs,
-    onSelectionChange,
-  };
+	return {
+		tabs,
+		onTabChange,
+	};
 };

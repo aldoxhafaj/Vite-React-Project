@@ -28,8 +28,9 @@
 			"@containers/*": ["src/Containers/*"],
 			"@layouts/*": ["src/Layouts/*"],
 			"@routes/*": ["src/Routes/*"],
-			"@contexts/*": ["src/contexts"],
-			"@shared/*": ["src/shared"],
+			"@contexts/*": ["src/contexts/*"],
+			"@shared/*": ["src/Shared/*"],
+			"@validations/*": ["src/Validations/*"],
 			"*": ["*", "src/Types/*"]
 		},
 		"typeRoots": ["./types", "./node_modules/@types"]

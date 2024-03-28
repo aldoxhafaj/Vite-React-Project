@@ -22,6 +22,7 @@ module.exports = {
     'react',
     'functional',
     'unused-imports',
+    'formatjs',
   ],
   rules: {
     // Add or modify rules as needed
@@ -109,6 +110,10 @@ module.exports = {
     'import/no-cycle': 'error',
     'import/no-duplicates': 'error',
     'import/no-unresolved': 'off',
+    'formatjs/no-offset': 'error',
+    'formatjs/enforce-default-message': ['error', 'literal'],
+    'formatjs/no-multiple-whitespaces': 'error',
+    'formatjs/enforce-id': 'error',
   },
   parserOptions: {
     sourceType: 'module',

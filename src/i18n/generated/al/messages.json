@@ -1,5 +1,12 @@
 {
-  "loginForm.input.emailLabel": "Email",
-  "loginForm.input.passwordLabel": "Fjalekalimi",
-  "loginForm.button": "Hyr"
+  "input.emailLabel": "Email",
+  "input.passwordLabel": "Fjalekalimi",
+  "loginForm.button": "Hyr",
+  "registerForm.button": "Regjistrohu",
+  "input.bussinessNameLabel": "Emri i biznesit",
+  "input.confirmPasswordLabel": "Konfirmoni fjalekalimin",
+  "loginTab.label": "Logohu",
+  "registerTab.label": "Regjistrohu",
+  "authenticationContainer.title": "Mire se erdhe!",
+  "authenticationContainer.headline": "Mire se erdhe!Ju lutem plotesoni te dhenat!"
 }

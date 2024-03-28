@@ -8,12 +8,14 @@ import { FontSize } from '@themes/fontSize';
 import { ImageSize } from '@themes/images';
 import { Shadow } from '@themes/shadow';
 import { HorizontalSpacing, VerticalSpacing } from '@themes/spacing';
+import { useIntl } from 'react-intl';
 
 import { useLogin } from './useLogin';
 
 const TAB_MAX_HEIGHT = 35;
 export const Login = () => {
   const { tabs, onTabChange } = useLogin();
+  const { formatMessage } = useIntl();
 
   return (
     <BackgroundImage name="nature" imageHeight={ImageSize?.full}>
@@ -34,14 +36,20 @@ export const Login = () => {
                 className="font-cabin font-bold"
                 fontSize={FontSize.CAPTION_1}
               >
-                Welcome Back!
+                {formatMessage({
+                  id: 'authenticationContainer.title',
+                  defaultMessage: 'Welcome Back!',
+                })}
               </Text>
               <Text
                 className="font-cabin"
                 fontSize={FontSize.OVERLINE}
                 color={Color.GREY_4}
               >
-                Welcome back!Please enter your details!
+                {formatMessage({
+                  id: 'authenticationContainer.headline',
+                  defaultMessage: 'Welcome back!Please enter your details!',
+                })}
               </Text>
             </Container>
             <Container

@@ -22,7 +22,7 @@ export const LoginForm = ({ formik, onKeyDown }: LoginFormProps) => {
           <Input
             type="email"
             label={formatMessage({
-              id: 'loginForm.input.emailLabel',
+              id: 'input.emailLabel',
               defaultMessage: 'Email',
             })}
             name="email"
@@ -34,7 +34,7 @@ export const LoginForm = ({ formik, onKeyDown }: LoginFormProps) => {
           <Input
             type="password"
             label={formatMessage({
-              id: 'loginForm.input.passwordLabel',
+              id: 'input.passwordLabel',
               defaultMessage: 'Password',
             })}
             name="password"

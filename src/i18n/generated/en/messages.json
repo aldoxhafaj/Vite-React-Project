@@ -1,5 +1,12 @@
 {
-  "loginForm.input.emailLabel": "Email",
-  "loginForm.input.passwordLabel": "Password",
-  "loginForm.button": "Login"
+  "input.emailLabel": "Email",
+  "input.passwordLabel": "Password",
+  "loginForm.button": "Login",
+  "registerForm.button": "Register",
+  "input.bussinessNameLabel": "Bussiness name",
+  "input.confirmPasswordLabel": "Confirm password",
+  "loginTab.label": "Sign in",
+  "registerTab.label": "Sign up",
+  "authenticationContainer.title": "Welcome Back!",
+  "authenticationContainer.headline": "Welcome back!Please enter your details!"
 }

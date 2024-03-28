@@ -2,6 +2,7 @@ import { Button } from '@components/Button';
 import { Input } from '@components/Input';
 import { Container } from '@layouts/container';
 import { Color } from '@themes/color';
+import { useIntl } from 'react-intl';
 
 import { RegisterFormProps } from './types';
 import { useRegisterForm } from './useRegisterForm';
@@ -9,6 +10,7 @@ import { useRegisterForm } from './useRegisterForm';
 export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
   const { onEnterPress } = useRegisterForm({ formik, onKeyDown });
   const { isValid, submitForm } = formik;
+  const { formatMessage } = useIntl();
   return (
     <Container
       flexGrow={1}
@@ -18,7 +20,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
         <Container className="flex w-full flex-col gap-3">
           <Input
             type="text"
-            label="Bussiness name"
+            label={formatMessage({
+              id: 'input.bussinessNameLabel',
+              defaultMessage: 'Bussiness name',
+            })}
             name="bussinessName"
             onChange={() => {
               //TODO
@@ -26,7 +31,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
           />
           <Input
             type="email"
-            label="Email"
+            label={formatMessage({
+              id: 'input.emailLabel',
+              defaultMessage: 'Email',
+            })}
             name="regEmail"
             onChange={() => {
               //TODO
@@ -34,7 +42,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
           />
           <Input
             type="password"
-            label="Password"
+            label={formatMessage({
+              id: 'input.passwordLabel',
+              defaultMessage: 'Password',
+            })}
             name="regPassword"
             onChange={() => {
               //TODO
@@ -42,7 +53,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
           />
           <Input
             type="password"
-            label="Confirm password"
+            label={formatMessage({
+              id: 'input.confirmPasswordLabel',
+              defaultMessage: 'Confirm password',
+            })}
             name="confirmPassword"
             onChange={() => {
               //TODO
@@ -57,7 +71,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
           isDisabled={isValid}
           onPress={submitForm}
         >
-          Register
+          {formatMessage({
+            id: 'registerForm.button',
+            defaultMessage: 'Register',
+          })}
         </Button>
       </Container>
     </Container>

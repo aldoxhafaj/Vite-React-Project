@@ -3,6 +3,7 @@ import { RegisterForm } from '@components/organisms/RegisterForm';
 import { useLoginSchema } from '@validations/useLoginSchema';
 import { useFormik } from 'formik';
 import { Key, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
 import { usePermissions } from 'src/contexts/AuthContext';
 
@@ -48,12 +49,15 @@ export const useLogin = () => {
   const tabs = [
     {
       id: Tab.SIGN_IN,
-      label: Tab.SIGN_IN,
+      label: <FormattedMessage id="loginTab.label" defaultMessage="Sign in" />,
       content: <LoginForm formik={formik} onKeyDown={navigateToDashboard} />,
     },
     {
       id: Tab.SIGN_UP,
-      label: Tab.SIGN_UP,
+      label: (
+        <FormattedMessage id="registerTab.label" defaultMessage="Sign up" />
+      ),
+
       content: <RegisterForm formik={formik} onKeyDown={navigateToDashboard} />,
     },
   ];

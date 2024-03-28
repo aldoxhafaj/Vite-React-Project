@@ -22,6 +22,7 @@
     "framer-motion": "^11.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intl": "^6.6.4",
     "react-router-dom": "^6.22.2",
     "yup": "^1.4.0"
   },
@@ -45,6 +46,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
     "eslint": "^8.56.0",
+    "eslint-plugin-formatjs": "^4.12.2",
     "eslint-plugin-functional": "^6.3.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.34.1",

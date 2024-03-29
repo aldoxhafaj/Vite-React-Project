@@ -47,6 +47,7 @@ export const Button = ({
         minHeight: BUTTON_MIN_HEIGHT,
       }}
       onPress={onPress}
+      onName="hi"
     >
       {children}
     </ButtonComponent>

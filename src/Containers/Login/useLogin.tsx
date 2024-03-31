@@ -1,6 +1,7 @@
 import { LoginForm } from '@components/organisms/LoginForm';
 import { RegisterForm } from '@components/organisms/RegisterForm';
 import { useLoginSchema } from '@validations/useLoginSchema';
+import { useRegisterSchema } from '@validations/useRegisterSchema';
 import { useFormik } from 'formik';
 import { Key, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -14,6 +15,7 @@ export const useLogin = () => {
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState<Key>(Tab.SIGN_IN);
   const loginSchema = useLoginSchema();
+  const registerSchema = useRegisterSchema();
 
   const onTabChange = (key: Key) => {
     setSelectedTab(key);
@@ -36,7 +38,8 @@ export const useLogin = () => {
       regPassword: '',
       confirmPassword: '',
     },
-    validationSchema: selectedTab === Tab.SIGN_IN ? loginSchema : undefined,
+    validationSchema:
+      selectedTab === Tab.SIGN_IN ? loginSchema : registerSchema,
     validateOnMount: true,
     onSubmit: () => {
       if (selectedTab === Tab.SIGN_IN) {
@@ -58,7 +61,14 @@ export const useLogin = () => {
         <FormattedMessage id="registerTab.label" defaultMessage="Sign up" />
       ),
 
-      content: <RegisterForm formik={formik} onKeyDown={navigateToDashboard} />,
+      content: (
+        <RegisterForm
+          formik={formik}
+          onKeyDown={() => {
+            //TODO
+          }}
+        />
+      ),
     },
   ];
 

@@ -8,9 +8,10 @@ import { RegisterFormProps } from './types';
 import { useRegisterForm } from './useRegisterForm';
 
 export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
-  const { onEnterPress } = useRegisterForm({ formik, onKeyDown });
-  const { isValid, submitForm } = formik;
+  const { onEnterPress, onChange } = useRegisterForm({ formik, onKeyDown });
+  const { values, errors, touched, isValid, submitForm } = formik;
   const { formatMessage } = useIntl();
+
   return (
     <Container
       flexGrow={1}
@@ -25,9 +26,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
               defaultMessage: 'Bussiness name',
             })}
             name="bussinessName"
-            onChange={() => {
-              //TODO
-            }}
+            value={values.bussinessName}
+            onChange={onChange}
+            isInvalid={touched.bussinessName && !!errors.bussinessName}
+            errorMessage={touched.bussinessName && errors.bussinessName}
           />
           <Input
             type="email"
@@ -36,9 +38,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
               defaultMessage: 'Email',
             })}
             name="regEmail"
-            onChange={() => {
-              //TODO
-            }}
+            value={values.regEmail}
+            onChange={onChange}
+            isInvalid={touched.regEmail && !!errors.regEmail}
+            errorMessage={touched.regEmail && errors.regEmail}
           />
           <Input
             type="password"
@@ -47,9 +50,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
               defaultMessage: 'Password',
             })}
             name="regPassword"
-            onChange={() => {
-              //TODO
-            }}
+            value={values.regPassword}
+            onChange={onChange}
+            isInvalid={touched.regPassword && !!errors.regPassword}
+            errorMessage={touched.regPassword && errors.regPassword}
           />
           <Input
             type="password"
@@ -58,9 +62,10 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
               defaultMessage: 'Confirm password',
             })}
             name="confirmPassword"
-            onChange={() => {
-              //TODO
-            }}
+            value={values.confirmPassword}
+            onChange={onChange}
+            isInvalid={touched.confirmPassword && !!errors.confirmPassword}
+            errorMessage={touched.confirmPassword && errors.confirmPassword}
           />
         </Container>
       </form>
@@ -68,7 +73,7 @@ export const RegisterForm = ({ formik, onKeyDown }: RegisterFormProps) => {
         <Button
           className="text-white font-bold font-cabin"
           backgroundColor={Color.BLUE}
-          isDisabled={isValid}
+          isDisabled={!isValid}
           onPress={submitForm}
         >
           {formatMessage({

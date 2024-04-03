@@ -1,4 +1,5 @@
-import { BackgroundImage } from '@layouts/backgroundImage';
+import { BackgroundImage, ImageComponent } from '@layouts/backgroundImage';
+import { GradientDirection } from '@layouts/backgroundImage/types';
 import { Container } from '@layouts/container';
 import { Text } from '@layouts/typography/Text';
 import { Tab, Tabs } from '@nextui-org/react';
@@ -18,7 +19,39 @@ export const Login = () => {
   const { formatMessage } = useIntl();
 
   return (
-    <BackgroundImage name="nature" imageHeight={ImageSize?.full}>
+    <BackgroundImage
+      name="nature"
+      imageHeight={ImageSize?.full}
+      gradient={{
+        direction: GradientDirection.BOTTOM,
+        from: Color.VIVID_BLUE,
+        to: Color.WHITE,
+      }}
+    >
+      <Container className="flex gap-3 absolute top-10 left-14 md:top-8 sm:top-6 xs:top-4 xs:left-8">
+        <ImageComponent
+          name="amd"
+          white
+          imageHeight={ImageSize.XL1}
+          imageWidth={ImageSize.XL1}
+        />
+        <Container>
+          <Text
+            className="font-cabin font-bold tracking-wide leading-none"
+            fontSize={FontSize.HEADLINE_3}
+            color={Color.WHITE}
+          >
+            NEXT LEVEL
+          </Text>
+          <Text
+            className="font-cabin font-bold tracking-wide leading-none"
+            fontSize={FontSize.HEADLINE_3}
+            color={Color.WHITE}
+          >
+            GYM
+          </Text>
+        </Container>
+      </Container>
       <Container
         className="h-dvh flex items-center justify-center"
         padding={HorizontalSpacing.M_L}

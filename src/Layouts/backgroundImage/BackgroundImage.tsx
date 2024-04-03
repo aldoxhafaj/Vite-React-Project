@@ -8,14 +8,24 @@ export const BackgroundImage = ({
   resizeMode,
   imageHeight,
   imageWidth,
+  gradient,
   children,
 }: BackgroundImageProps) => {
   const memoizedImage = useMemo(() => getImage(name), [name]);
 
   const width = imageWidth || '100%';
+  const linearGradient =
+    gradient &&
+    `linear-gradient(to ${gradient.direction}, ${gradient.from}, ${gradient.to})`;
 
   return (
     <div className="relative" style={{ height: imageHeight, width }}>
+      {!!gradient && (
+        <div
+          className="absolute top-0 left-0 opacity-80 h-dvh w-full z-10"
+          style={{ backgroundImage: linearGradient }}
+        />
+      )}
       <img
         className="absolute top-0 right-0 left-0 bottom-0"
         src={memoizedImage}

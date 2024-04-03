@@ -8,7 +8,7 @@ export const AuthContext = createContext<AuthContextProps | null>(null);
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loggedUser, setLoggedUser] = useState<User | null>({
     id: '1',
-    role: Role.ADMIN,
+    role: Role.USER,
   });
 
   const initializeUser = (userData: User) => {

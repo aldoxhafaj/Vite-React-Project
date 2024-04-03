@@ -7,8 +7,9 @@ export type ImageComponentProps = {
   resizeMode?: ImageResizeMode;
   imageHeight?: ImageSize;
   imageWidth?: ImageSize;
+  white?: boolean;
 };
 
-export type BackgroundImageProps = ImageComponentProps & {
+export type BackgroundImageProps = Omit<ImageComponentProps, 'white'> & {
   children: React.ReactNode;
 };

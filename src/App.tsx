@@ -3,7 +3,7 @@ import { Login } from '@containers/Login';
 import { NotFoundPage } from '@containers/NotFound';
 import { AdminRoutes } from '@routes/AdminRoutes';
 import { UserRoutes } from '@routes/UserRoutes';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { Role } from './Types/backend';
 
@@ -27,7 +27,8 @@ const App = () => {
           </PrivateRoute>
         }
       />
-      <Route path="*" element={<NotFoundPage />} />
+      <Route path="*" element={<Navigate to="/notFound" />} />
+      <Route path="/notFound" element={<NotFoundPage />} />
     </Routes>
   );
 };

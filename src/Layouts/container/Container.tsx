@@ -24,21 +24,19 @@ export const Container = ({
     <div
       className={className}
       style={{
-        paddingBottom,
-        paddingLeft,
-        paddingRight,
-        paddingTop,
-        padding,
-        borderTopLeftRadius,
-        borderTopRightRadius,
-        borderBottomRightRadius,
-        borderBottomLeftRadius,
-        borderRadius,
+        paddingBottom: paddingBottom ?? padding,
+        paddingLeft: paddingLeft ?? padding,
+        paddingRight: paddingRight ?? padding,
+        paddingTop: paddingTop ?? padding,
         borderColor,
         borderWidth,
         backgroundColor,
         flex,
         flexGrow,
+        borderTopLeftRadius: borderTopLeftRadius ?? borderRadius,
+        borderTopRightRadius: borderTopRightRadius ?? borderRadius,
+        borderBottomRightRadius: borderBottomRightRadius ?? borderRadius,
+        borderBottomLeftRadius: borderBottomLeftRadius ?? borderRadius,
         boxShadow,
       }}
     >

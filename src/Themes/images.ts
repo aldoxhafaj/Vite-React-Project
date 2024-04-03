@@ -1,11 +1,33 @@
 import { scale } from '@utils/calculations';
 
+import amdImage from '../Shared/Images/amd.png';
+import amenitiesImage from '../Shared/Images/amenities.png';
+import bookImage from '../Shared/Images/book.png';
+import briefcaseImage from '../Shared/Images/briefcase.png';
+import calendarImage from '../Shared/Images/calendar.png';
+import classImage from '../Shared/Images/class.png';
+import clientsImage from '../Shared/Images/clients.png';
+import diamondImage from '../Shared/Images/diamond.png';
+import exitImage from '../Shared/Images/exit.png';
 import gymImage from '../Shared/Images/gym.png';
+import homeImage from '../Shared/Images/home.png';
 import natureImage from '../Shared/Images/nature.png';
+import pieChartImage from '../Shared/Images/pieChart.png';
 
 const Images = {
   gym: gymImage,
   nature: natureImage,
+  amd: amdImage,
+  home: homeImage,
+  briefcase: briefcaseImage,
+  class: classImage,
+  clients: clientsImage,
+  amenities: amenitiesImage,
+  pieChart: pieChartImage,
+  calendar: calendarImage,
+  book: bookImage,
+  diamond: diamondImage,
+  exit: exitImage,
 };
 
 export type ImageName = keyof typeof Images;

@@ -1,6 +1,7 @@
 import './index.css';
 
 import { IntlProvider } from '@contexts/IntlContext/IntlProvider.tsx';
+import { SidebarProvider } from '@contexts/SidebarContext/SidebarProvider.tsx';
 import { NextUIProvider } from '@nextui-org/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -15,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <NextUIProvider>
         <BrowserRouter>
           <AuthProvider>
-            <App />
+            <SidebarProvider>
+              <App />
+            </SidebarProvider>
           </AuthProvider>
         </BrowserRouter>
       </NextUIProvider>

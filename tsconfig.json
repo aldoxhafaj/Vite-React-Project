@@ -32,6 +32,7 @@
       "@shared/*": ["src/Shared/*"],
       "@validations/*": ["src/Validations/*"],
       "@i18n/*": ["src/i18n/*"],
+      "@config/*": ["src/Config/*"],
       "*": ["*", "src/Types/*"]
     },
     "typeRoots": ["./types", "./node_modules/@types"]

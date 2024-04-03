@@ -3,8 +3,14 @@ import { ReactNode } from 'react';
 import { FlexStyle } from 'src/Types';
 
 export type RowProps = {
+  className?: string;
   children: ReactNode;
-  marginTop?: number;
+  marginTop?: VerticalSpacing | HorizontalSpacing;
+  padding?: HorizontalSpacing;
+  paddingBottom?: VerticalSpacing;
+  paddingLeft?: HorizontalSpacing;
+  paddingRight?: HorizontalSpacing;
+  paddingTop?: VerticalSpacing;
   justifyContent?: FlexStyle['justifyContent'];
   alignItems?: FlexStyle['alignItems'];
   flex?: number;

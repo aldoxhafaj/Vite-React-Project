@@ -52,6 +52,10 @@ enum ImageSizeEnum {
    */
   M = 16,
   /**
+   * 20
+   */
+  M_L = 20,
+  /**
    * 24
    */
   L = 24,
@@ -90,6 +94,10 @@ export enum ImageSize {
    * 16
    */
   M = scale(ImageSizeEnum.M),
+  /**
+   * 20
+   */
+  M_L = scale(ImageSizeEnum.M_L),
   /**
    * 24
    */

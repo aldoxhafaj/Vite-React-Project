@@ -10,7 +10,16 @@ export type ContainerProps = {
   paddingBottom?: VerticalSpacing;
   paddingLeft?: HorizontalSpacing;
   paddingRight?: HorizontalSpacing;
+  paddingHorizontal?: HorizontalSpacing;
+  paddingVertical?: VerticalSpacing;
   paddingTop?: VerticalSpacing;
+  margin?: HorizontalSpacing;
+  marginTop?: VerticalSpacing;
+  marginBottom?: VerticalSpacing;
+  marginRight?: HorizontalSpacing;
+  marginLeft?: HorizontalSpacing;
+  marginHorizontal?: HorizontalSpacing;
+  marginVertical?: VerticalSpacing;
   children: ReactNode;
   borderRadius?: BorderRadius;
   borderTopLeftRadius?: BorderRadius;

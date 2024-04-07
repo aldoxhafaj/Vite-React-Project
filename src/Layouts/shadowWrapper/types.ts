@@ -1,3 +1,4 @@
+import { BorderRadius } from '@themes/borderRadius';
 import { ReactNode } from 'react';
 
 export enum ShadowWrapperType {
@@ -12,4 +13,5 @@ export enum ShadowWrapperType {
 export type ShadowWrapperProps = {
   children: ReactNode;
   type: ShadowWrapperType;
+  borderRadius?: BorderRadius;
 };

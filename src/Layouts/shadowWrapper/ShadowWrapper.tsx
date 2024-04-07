@@ -19,8 +19,23 @@ const getShadowWrapper = (type: ShadowWrapperType) => {
   }
 };
 
-export const ShadowWrapper = ({ children, type }: ShadowWrapperProps) => {
+export const ShadowWrapper = ({
+  children,
+  type,
+  borderRadius,
+}: ShadowWrapperProps) => {
   const boxShadow = getShadowWrapper(type);
 
-  return <div style={{ boxShadow }}>{children}</div>;
+  return (
+    <div
+      style={{
+        boxShadow,
+        display: 'inline-block',
+        overflow: 'hidden',
+        borderRadius,
+      }}
+    >
+      {children}
+    </div>
+  );
 };

@@ -5,14 +5,22 @@ import { Text } from '@layouts/typography/Text';
 import { Color } from '@themes/color';
 import { FontSize } from '@themes/fontSize';
 import { HorizontalSpacing } from '@themes/spacing';
+import { useIntl } from 'react-intl';
 
 import { useUserDashboard } from './useUserDashboard';
 
 export const UserDashboard = () => {
   const { cardButtons } = useUserDashboard();
+  const { formatMessage } = useIntl();
+
   return (
     <Container className="h-full" flexGrow={1} padding={HorizontalSpacing.S}>
-      <Text className="font-cabin font-bold">Overview</Text>
+      <Text className="font-cabin font-bold">
+        {formatMessage({
+          id: 'userDashboard.headline',
+          defaultMessage: 'Overview',
+        })}
+      </Text>
       <Row
         className="flex-wrap"
         justifyContent="flex-start"

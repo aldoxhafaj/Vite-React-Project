@@ -1,3 +1,5 @@
-import { ImageName } from '@themes/images';
-
-export type MenuModules = { iconName: ImageName; text: string };
+export enum AppScreens {
+  DASHBOARD = 'dashboard',
+  LOGIN = 'login',
+  NOT_FOUND = 'notFound',
+}

@@ -1,4 +1,3 @@
-import { MENU_MODULES } from '@config/ScreensWithSidebar';
 import { ImageComponent } from '@layouts/backgroundImage';
 import { Container } from '@layouts/container';
 import { Row } from '@layouts/row';
@@ -7,8 +6,14 @@ import { Color } from '@themes/color';
 import { FontSize } from '@themes/fontSize';
 import { ImageSize } from '@themes/images';
 import { HorizontalSpacing, VerticalSpacing } from '@themes/spacing';
+import { useIntl } from 'react-intl';
+
+import { useSidebar } from './useSidebar';
 
 export const Sidebar = () => {
+  const { formatMessage } = useIntl();
+  const { menuModules } = useSidebar();
+
   return (
     <Container
       className="h-full bg-gradient-to-b from-cyan-500 to-blue-500"
@@ -32,11 +37,14 @@ export const Sidebar = () => {
           fontSize={FontSize.HEADLINE_5}
           color={Color.WHITE}
         >
-          Gym Tech
+          {formatMessage({
+            id: 'sidebar.menu.title',
+            defaultMessage: 'Gym Tech',
+          })}
         </Text>
       </Row>
       <Container paddingTop={VerticalSpacing.M_L}>
-        {MENU_MODULES.map((item, index) => (
+        {menuModules.map((item, index) => (
           <Row
             key={index}
             className="rounded-sm select-none cursor-pointer transition-all hover:bg-cyan-800 hover:bg-opacity-50 active:opacity-40"

@@ -1,9 +1,9 @@
 import { ImageName, ImageSize } from '@themes/images';
-import { ReactNode } from 'react';
 
-export type CardProps = {
+export type CardButton = {
   title: string;
-  cardComponent: ReactNode;
+  value: string;
   leftIcon?: ImageName;
   iconSize?: ImageSize;
+  onClick?: () => void;
 };

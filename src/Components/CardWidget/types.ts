@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 
 export type CardWidgetProps = {
   title: string;
-  cardBodyComponent: ReactNode;
+  cardBodyComponent?: ReactNode;
   leftIcon?: ImageName;
   iconSize?: ImageSize;
   backgroundColor?: Color;

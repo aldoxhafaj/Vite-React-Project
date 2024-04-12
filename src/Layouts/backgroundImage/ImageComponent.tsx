@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { ImageComponentProps } from './types';
 
 export const ImageComponent = ({
+  className,
   name,
   resizeMode,
   imageHeight = ImageSize.S,
@@ -18,6 +19,7 @@ export const ImageComponent = ({
 
   return (
     <img
+      className={className}
       src={memoizedImage}
       style={{
         height: imageHeight,

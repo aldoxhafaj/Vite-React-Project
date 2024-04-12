@@ -2,6 +2,8 @@ import { scale } from '@utils/calculations';
 
 import amdImage from '../Shared/Images/amd.png';
 import amenitiesImage from '../Shared/Images/amenities.png';
+import anonimousAvatarImage from '../Shared/Images/anonimousAvatar.png';
+import bellImage from '../Shared/Images/bell.png';
 import bookImage from '../Shared/Images/book.png';
 import briefcaseImage from '../Shared/Images/briefcase.png';
 import calendarImage from '../Shared/Images/calendar.png';
@@ -16,6 +18,7 @@ import homeImage from '../Shared/Images/home.png';
 import moneyImage from '../Shared/Images/money-bag.png';
 import natureImage from '../Shared/Images/nature.png';
 import pieChartImage from '../Shared/Images/pieChart.png';
+import searchImage from '../Shared/Images/search.png';
 
 const Images = {
   gym: gymImage,
@@ -34,6 +37,9 @@ const Images = {
   money: moneyImage,
   filledBriefcase: filledBriefcaseImage,
   filledClients: filledClientsImage,
+  bell: bellImage,
+  search: searchImage,
+  anonimousAvatar: anonimousAvatarImage,
 };
 
 export type ImageName = keyof typeof Images;
@@ -50,9 +56,13 @@ enum ImageSizeEnum {
    */
   S = 10,
   /**
+   * 12
+   */
+  S_M = 12,
+  /**
    * 14
    */
-  S_M = 14,
+  S_L = 14,
   /**
    * 16
    */
@@ -93,9 +103,13 @@ export enum ImageSize {
    */
   S = scale(ImageSizeEnum.S),
   /**
-   * 14
+   * 12
    */
   S_M = scale(ImageSizeEnum.S_M),
+  /**
+   * 14
+   */
+  S_L = scale(ImageSizeEnum.S_L),
   /**
    * 16
    */

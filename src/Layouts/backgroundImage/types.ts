@@ -4,6 +4,7 @@ import { ImageName, ImageSize } from '@themes/images';
 export type ImageResizeMode = 'cover' | 'contain';
 
 export type ImageComponentProps = {
+  className?: string;
   name: ImageName;
   resizeMode?: ImageResizeMode;
   imageHeight?: ImageSize;

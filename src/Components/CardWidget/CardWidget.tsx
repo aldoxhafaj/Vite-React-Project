@@ -49,9 +49,11 @@ export const CardWidget = ({
         </Row>
       </CardHeader>
 
-      <CardBody className="pt-0">
-        <Container>{cardBodyComponent}</Container>
-      </CardBody>
+      {!!cardBodyComponent && (
+        <CardBody className="pt-0">
+          <Container>{cardBodyComponent}</Container>
+        </CardBody>
+      )}
     </Card>
   );
 };

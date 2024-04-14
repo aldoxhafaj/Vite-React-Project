@@ -1,5 +1,6 @@
 import { CardWidget } from '@components/CardWidget';
 import { Input } from '@components/Input';
+import { NotificationBell } from '@components/NotificationBell';
 import { ProfileTile } from '@components/ProfileTile';
 import { ImageComponent } from '@layouts/backgroundImage';
 import { Container } from '@layouts/container';
@@ -34,8 +35,8 @@ export const UserDashboard = () => {
               onChange={() => undefined}
             />
           </Container>
-          <ImageComponent name="bell" />
 
+          <NotificationBell onClick={() => undefined} />
           <ProfileTile
             username={formatMessage({
               id: 'userDashboard.profileTile.username',

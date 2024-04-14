@@ -28,6 +28,7 @@ export const Container = ({
   marginRight,
   marginHorizontal,
   marginVertical,
+  onClick,
 }: ContainerProps) => {
   return (
     <div
@@ -52,6 +53,7 @@ export const Container = ({
         marginRight: marginRight || marginHorizontal || margin,
         marginLeft: marginLeft || marginHorizontal || margin,
       }}
+      onClick={onClick}
     >
       {children}
     </div>

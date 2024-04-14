@@ -32,4 +32,5 @@ export type ContainerProps = {
   flex?: number;
   flexGrow?: number;
   boxShadow?: Shadow;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };

@@ -17,7 +17,7 @@ export const ProfileTile = ({
 }: ProfileTileProps) => {
   return (
     <Container
-      className="cursor-pointer select-none transition-opacity hover:opacity-85 active:opacity-65"
+      className="cursor-pointer select-none transition-opacity hover:opacity-85 active:opacity-60"
       backgroundColor={backgroundColor}
       borderRadius={BorderRadius.XS}
       paddingVertical={VerticalSpacing.XS}

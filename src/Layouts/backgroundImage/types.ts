@@ -19,7 +19,10 @@ export enum GradientDirection {
   LEFT = 'left',
 }
 
-export type BackgroundImageProps = Omit<ImageComponentProps, 'white'> & {
+export type BackgroundImageProps = Omit<
+  ImageComponentProps,
+  'white' | 'className'
+> & {
   gradient?: {
     direction: GradientDirection;
     from: Color;

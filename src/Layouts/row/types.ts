@@ -15,4 +15,5 @@ export type RowProps = {
   alignItems?: FlexStyle['alignItems'];
   flex?: number;
   gap?: VerticalSpacing | HorizontalSpacing;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 };

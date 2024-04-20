@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { useIntl } from 'react-intl';
 
-import { MenuModules } from './types';
+import { MenuModules } from '../types';
+import { useSidebarAnimation } from './useSidebarAnimation';
 
 export const useSidebar = () => {
   const { formatMessage } = useIntl();
+  const [sidebarClosed, setSidebarClosed] = useState(false);
+  const { sidebarAnimation, menuModuleAnimaton } = useSidebarAnimation();
 
   const MENU_MODULES: MenuModules[] = [
     {
@@ -78,7 +82,15 @@ export const useSidebar = () => {
     },
   ];
 
+  const toggleSidebar = () => {
+    setSidebarClosed((sidebarClosed) => !sidebarClosed);
+  };
+
   return {
     menuModules: MENU_MODULES,
+    toggleSidebar,
+    sidebarClosed,
+    sidebarAnimation,
+    menuModuleAnimaton,
   };
 };

@@ -13,6 +13,7 @@ export const Row = ({
   paddingLeft,
   paddingRight,
   paddingTop,
+  onClick,
 }: RowProps) => {
   return (
     <div
@@ -30,6 +31,7 @@ export const Row = ({
         paddingTop: paddingTop ?? padding,
         gap,
       }}
+      onClick={onClick}
     >
       {children}
     </div>

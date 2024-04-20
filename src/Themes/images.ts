@@ -9,8 +9,10 @@ import briefcaseImage from '../Shared/Images/briefcase.png';
 import calendarImage from '../Shared/Images/calendar.png';
 import classImage from '../Shared/Images/class.png';
 import clientsImage from '../Shared/Images/clients.png';
+import closeImage from '../Shared/Images/close.png';
 import diamondImage from '../Shared/Images/diamond.png';
 import exitImage from '../Shared/Images/exit.png';
+import extendImage from '../Shared/Images/extend.png';
 import filledBriefcaseImage from '../Shared/Images/filledBriefcase.png';
 import filledClientsImage from '../Shared/Images/filledClients.png';
 import gymImage from '../Shared/Images/gym.png';
@@ -40,6 +42,8 @@ const Images = {
   bell: bellImage,
   search: searchImage,
   anonimousAvatar: anonimousAvatarImage,
+  close: closeImage,
+  extend: extendImage,
 };
 
 export type ImageName = keyof typeof Images;
@@ -47,6 +51,10 @@ export type ImageName = keyof typeof Images;
 export const getImage = (imageName: ImageName) => Images[imageName];
 
 enum ImageSizeEnum {
+  /**
+   * 4
+   */
+  XX_S = 4,
   /**
    * 8
    */
@@ -94,6 +102,10 @@ enum ImageSizeEnum {
 }
 
 export enum ImageSize {
+  /**
+   * 4
+   */
+  XX_S = scale(ImageSizeEnum.XX_S),
   /**
    * 8
    */
